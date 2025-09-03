@@ -7,9 +7,13 @@ This project involves a comprehensive analysis of Blinkit’s grocery sales data
 ## Objectives
 
 -- Analyze overall sales performance across items and outlets.
+
 -- Identify top-performing categories, brands, and outlet types.
+
 -- Compare sales contribution by fat content, outlet size, and outlet location.
+
 -- Measure customer satisfaction through ratings and visibility.
+
 -- Categorize items based on product descriptions.
 
 ## Dataset
