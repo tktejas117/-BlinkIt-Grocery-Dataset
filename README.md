@@ -38,7 +38,7 @@ CREATE TABLE blinkit_data
     Outlet_Location_Type  VARCHAR(50),
     Outlet_Type           VARCHAR(50),
     Total_Sales           DECIMAL(10,2),
-    Rating                DECIMAL(3,1),
+    Rating                INT,
 );
 
 );
@@ -46,16 +46,16 @@ CREATE TABLE blinkit_data
 
 ## Business Problems and Solutions
 
-### 1. Count the Number of Movies vs TV Shows
+### 1. Total Sales
 
 ```sql
 SELECT CAST(SUM(Total_Sales) / 1000000.0 AS DECIMAL(10,2)) AS Total_Sales_Million
 FROM blinkit_data;
 ```
 
-**Objective:** Calculate overall revenue generated from all items sold.
+**Objective:** The overall revenue generated from all items sold.
 
-### 2. Find the Most Common Rating for Movies and TV Shows
+### 2. Average Sales
 
 ```sql
 SELECT CAST(AVG(Total_Sales) AS INT) AS Avg_Sales
@@ -63,9 +63,9 @@ FROM blinkit_data;
 
 ```
 
-**Objective:** Find the average revenue per sale.
+**Objective:** The average revenue per sale.
 
-### 3. List All Movies Released in a Specific Year (e.g., 2020)
+### 3. Number of Items
 
 ```sql
 SELECT COUNT(*) AS No_of_Items
@@ -75,7 +75,7 @@ FROM blinkit_data;
 
 **Objective:** Count the total number of items sold.
 
-### 4. Find the Top 5 Countries with the Most Content on Netflix
+### 4. Average Rating
 
 ```sql
 SELECT CAST(AVG(Rating) AS DECIMAL(10,1)) AS Avg_Rating
@@ -83,9 +83,9 @@ FROM blinkit_data;
 
 ```
 
-**Objective:** Find the average customer rating across all items.
+**Objective:** Find the average customer rating items sold
 
-### 5. Identify the Longest Movie
+### 5. Total Sales by Fat Content
 
 ```sql
 SELECT Item_Fat_Content, CAST(SUM(Total_Sales) AS DECIMAL(10,2)) AS Total_Sales
@@ -94,9 +94,9 @@ GROUP BY Item_Fat_Content;
 
 ```
 
-**Objective:** Analyze sales distribution between Low Fat and Regular items.
+**Objective:** Analyze the impact of fat content on total sales.
 
-### 6. Find Content Added in the Last 5 Years
+### 6. Total Sales by Item Type
 
 ```sql
 SELECT Item_Type, CAST(SUM(Total_Sales) AS DECIMAL(10,2)) AS Total_Sales
@@ -106,9 +106,9 @@ ORDER BY Total_Sales DESC;
 
 ```
 
-**Objective:** Identify which product categories contribute the most to sales.
+**Objective:** Identify the performance of different item types in terms of total sales.
 
-### 7. Find All Movies/TV Shows by Director 'Rajiv Chilaka'
+### 7. Fat Content by Outlet for Total Sales:
 
 ```sql
 SELECT Outlet_Location_Type, 
@@ -129,9 +129,9 @@ ORDER BY Outlet_Location_Type;
 
 ```
 
-**Objective:** Compare fat content sales performance across different outlet locations.
+**Objective:** Compare total sales across different outlets segmented by fat content.
 
-### 8. List All TV Shows with More Than 5 Seasons
+### 8. Total Sales by Outlet Establishment:
 
 ```sql
 SELECT Outlet_Establishment_Year, CAST(SUM(Total_Sales) AS DECIMAL(10,2)) AS Total_Sales
@@ -141,9 +141,9 @@ ORDER BY Outlet_Establishment_Year;
 
 ```
 
-**Objective:** Evaluate how the age or type of outlet influences sales.
+**Objective:** Evaluate how the age or type of outlet establishment influences total sales.
 
-### 9. Count the Number of Content Items in Each Genre
+### 9. Count Percentage of Sales by Outlet Size:
 
 ```sql
 SELECT Outlet_Size, 
@@ -155,9 +155,9 @@ ORDER BY Total_Sales DESC;
 
 ```
 
-**Objective:** Find the contribution of Small, Medium, and Large outlets to overall sales.
+**Objective:** Analyze the correlation between outlet size and total sales.
 
-### 10.Find each year and the average numbers of content release in India on netflix. 
+### 10.Sales by Outlet Location
 return top 5 year with highest avg content release!
 
 ```sql
@@ -168,9 +168,9 @@ ORDER BY Total_Sales DESC;
 
 ```
 
-**Objective:** Measure sales distribution across different outlet locations.
+**Objective:** Assess the geographic distribution of sales across different locations.
 
-### 11. List All Movies that are Documentaries
+### 11. All Metrics by Outlet Type
 
 ```sql
 SELECT Outlet_Type, 
@@ -185,33 +185,25 @@ ORDER BY Total_Sales DESC;
 
 ```
 
-**Objective:** Compare all KPIs (sales, average sales, item counts, ratings, and visibility) by outlet type.
-
+**Objective:**  Provide a comprehensive view of all key metrics (Total Sales, Average Sales, Number of 	Items, Average Rating) broken down by different outlet types.
 
 
 ## Findings and Conclusion
 
 - **Sales performace:** Larger outlets contribute the highest percentage of sales.
-- **Customer Preferance:** Insights into the most common ratings provide an understanding of the content's target audience.
-- **Category Insights:** The top countries and the average content releases by India highlight regional content distribution.
-- **Outlet Insights:** Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
-- **Cutomer Feedback:** Categorizing content based on specific keywords helps in understanding the nature of content available on Netflix.
+- **Customer Preferance:** Regular items perform better than Low Fat products.
+- **Category Insights:** Categories like Dairy, Snacks, and Beverages dominate sales.
+- **Outlet Insights:** Older outlets and those in higher-tier locations generate more revenue.
+- **Cutomer Feedback:** Ratings remain steady across outlets, but item visibility impacts performance.
 
-This analysis provides a comprehensive view of Netflix's content and can help inform content strategy and decision-making.
+This analysis provides a comprehensive view of Blinkit’s sales data, helping optimize inventory planning, outlet expansion, and marketing strategies.
 
-
-
-## Author - Zero Analyst
-
-This project is part of my portfolio, showcasing the SQL skills essential for data analyst roles. If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
 
 ### Stay Updated and Join the Community
 
 For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
 
-- **YouTube**: [Subscribe to my channel for tutorials and insights](https://www.youtube.com/@zero_analyst)
-- **Instagram**: [Follow me for daily tips and updates](https://www.instagram.com/zero_analyst/)
-- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/najirr)
-- **Discord**: [Join our community to learn and grow together](https://discord.gg/36h5f2Z5PK)
+
+- **LinkedIn**: [Connect with me professionally](www.linkedin.com/in/tejas-kumar-s)
 
 Thank you for your support, and I look forward to connecting with you!
