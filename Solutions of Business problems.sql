@@ -3,13 +3,11 @@
 
 --KPI 1: Total Sales
 
-
 SELECT CAST(SUM(Total_Sales) / 1000000.0 AS DECIMAL(10,2)) AS Total_Sales_Million
 FROM blinkit_data;
 
 
 --KPI 2: Average Sales
-
 
 SELECT CAST(AVG(Total_Sales) AS INT) AS Avg_Sales
 FROM blinkit_data;
@@ -22,7 +20,6 @@ FROM blinkit_data;
 
 
 --KPI 4: Average Rating
-
 
 SELECT CAST(AVG(Rating) AS DECIMAL(10,1)) AS Avg_Rating
 FROM blinkit_data;
@@ -62,7 +59,6 @@ ORDER BY Outlet_Location_Type;
 
 -- KPI 8: Total Sales by Outlet Establishment
 
-
 SELECT Outlet_Establishment_Year, CAST(SUM(Total_Sales) AS DECIMAL(10,2)) AS Total_Sales
 FROM blinkit_data
 GROUP BY Outlet_Establishment_Year
@@ -71,8 +67,6 @@ ORDER BY Outlet_Establishment_Year;
 
 
 -- KPI 9: Percentage of Sales by Outlet Size
-
-
 
 SELECT Outlet_Size, 
        CAST(SUM(Total_Sales) AS DECIMAL(10,2)) AS Total_Sales,
@@ -84,7 +78,6 @@ ORDER BY Total_Sales DESC;
 
 
 -- KPI 10: Sales by Outlet Location
-
 
 SELECT Outlet_Location_Type, CAST(SUM(Total_Sales) AS DECIMAL(10,2)) AS Total_Sales
 FROM blinkit_data
