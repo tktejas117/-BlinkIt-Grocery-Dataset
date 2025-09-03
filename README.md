@@ -204,6 +204,6 @@ This analysis provides a comprehensive view of Blinkit’s sales data, helping o
 For more content on SQL, data analysis, and other data-related topics, make sure to follow me on social media and join our community:
 
 
-- **LinkedIn**: [Connect with me professionally](www.linkedin.com/in/tejas-kumar-s)
+- **LinkedIn**: [Connect with me professionally](https://www.linkedin.com/in/tejas-kumar-s)
 
 Thank you for your support, and I look forward to connecting with you!
