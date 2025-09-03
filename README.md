@@ -1,4 +1,4 @@
-# Netflix Movies and TV Shows Data Analysis using SQL
+# Blinkit Grocery Data Analysis using SQL
 
 ![](https://github.com/tktejas117/-BlinkIt-Grocery-Dataset/blob/main/image.jpg)
 
